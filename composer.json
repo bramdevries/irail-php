@@ -1,0 +1,22 @@
+{
+    "name": "bramdevries/irail-php",
+    "description": "A PHP wrapper for iRail.be",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bram Devries",
+            "email": "bram_devries@2to1.be"
+        }
+    ],
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "iRail": "src/"
+        }
+    },
+    "require": {
+        "guzzle/guzzle": "*"
+    }
+}

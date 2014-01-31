@@ -11,11 +11,15 @@ function dd($d) {
 }
 
 $irail = new iRail();
-$connection = $irail->api('connection')->schedule("Tienen", "Brugge", array(
+/*$connection = $irail->api('connection')->schedule("Tienen", "Brugge", array(
   'date' => '241014',
   'timeSel' => 'arrive',
   'typeOfTransport' => 'bus',
-));
+));*/
 
-dd($connection);
-//dd($irail->api('stations')->all());
+//$board  = $irail->api('liveboard')->name('Gent Sint Pieters');
+/*$board = $irail->api('liveboard')->name('Courtrai', array(
+  'date' => '020214',
+  'time' => '1300',
+  'fast' => true
+)); */

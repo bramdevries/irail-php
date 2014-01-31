@@ -30,6 +30,9 @@ class Client
       case 'connection': 
         $api = new Api\Connection($this);
         break;  
+      case 'liveboard':
+        $api = new Api\Liveboard($this);
+        break;
     }
 
     return $api;

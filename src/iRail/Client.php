@@ -24,18 +24,11 @@ class Client
 
   public function api($name) {
     switch ($name) {
-      case 'stations':
-        $api = new Api\Station($this);
-        break;
-      case 'connection': 
-        $api = new Api\Connection($this);
-        break;  
-      case 'liveboard':
-        $api = new Api\Liveboard($this);
-        break;
+      case 'stations': return new Api\Station($this);
+      case 'connection': return new Api\Connection($this);
+      case 'liveboard': return new Api\Liveboard($this);
+      case 'vehicle': return new Api\Vehicle($this);  
     }
-
-    return $api;
   }
 
   public function getHttpClient()

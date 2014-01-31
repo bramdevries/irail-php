@@ -23,3 +23,8 @@ $irail = new iRail();
   'time' => '1300',
   'fast' => true
 )); */
+
+
+$vehicle = $irail->api('vehicle')->id('Be.NMBS.P1234');
+
+dd($vehicle);

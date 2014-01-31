@@ -10,7 +10,6 @@ class Client
   protected $options = array(
     'base_url' => 'http://api.irail.be/',
     'lang' => 'en',
-    'format' => 'json'
   );
 
   private $httpClient;
@@ -28,6 +27,9 @@ class Client
       case 'stations':
         $api = new Api\Station($this);
         break;
+      case 'connection': 
+        $api = new Api\Connection($this);
+        break;  
     }
 
     return $api;

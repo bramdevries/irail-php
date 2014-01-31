@@ -4,14 +4,18 @@ require_once('../vendor/autoload.php');
 
 use iRail\Client as iRail;
 
-function dd() {
+function dd($d) {
   echo "<pre>";
-  print_r(func_get_args());
+  print_r($d);
   die("</pre>");
 }
 
 $irail = new iRail();
-$station = $irail->api('stations')->all();
+$connection = $irail->api('connection')->schedule("Tienen", "Brugge", array(
+  'date' => '241014',
+  'timeSel' => 'arrive',
+  'typeOfTransport' => 'bus',
+));
 
-
-dd($station);
+dd($connection);
+//dd($irail->api('stations')->all());

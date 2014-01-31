@@ -17,8 +17,12 @@ abstract class AbstractApi
   public function get ($path, array $parameters = array()) 
   {
 
-    $path .= "?format=" . $this->client->getFormat();
+    $path .= "?format=json";
     $path .= "&lang=" . $this->client->getLanguage();
+
+    foreach ($parameters as $key => $param) {
+      $path .= "&" . $key . '=' . $param;
+    }
 
     $request = $this->client->getHttpClient()->get($path);
     $response = $request->send();

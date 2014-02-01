@@ -2,6 +2,7 @@
     "name": "bramdevries/irail-php",
     "description": "A PHP wrapper for iRail.be",
     "license": "MIT",
+    "homepage": "https://github.com/bramdevries/irail-php",
     "authors": [
         {
             "name": "Bram Devries",

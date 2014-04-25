@@ -1,26 +1,26 @@
-<?php 
+<?php
 
 namespace iRail\Api;
 
-class LiveBoard extends AbstractApi 
+class Liveboard extends AbstractApi
 {
-  public function name($station, array $options = array()) 
-  {
-    $params = array();
-    $params = array_merge($params, $options);
-    
-    $params['station'] = $station;
+    public function name($station, array $options = array())
+    {
+        $params = array();
+        $params = array_merge($params, $options);
 
-    return $this->get('liveboard/', $params);
-  }
+        $params['station'] = $station;
 
-  public function id($id, array $options = array()) 
-  {
-    $params = array();
-    $params = array_merge($params, $options);
-    
-    $params['id'] = $id;
+        return $this->get('liveboard/', $params);
+    }
 
-    return $this->get('liveboard/', $params);
-  }
+    public function id($id, array $options = array())
+    {
+        $params = array();
+        $params = array_merge($params, $options);
+
+        $params['id'] = $id;
+
+        return $this->get('liveboard/', $params);
+    }
 }

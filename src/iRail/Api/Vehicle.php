@@ -1,16 +1,16 @@
-<?php 
+<?php
 
 namespace iRail\Api;
 
-class Vehicle extends AbstractApi 
+class Vehicle extends AbstractApi
 {
-  public function id($id, array $options = array()) 
-  {
-    $params = array();
-    $params = array_merge($params, $options);
-    
-    $params['id'] = $id;
+    public function id($id, array $options = array())
+    {
+        $params = array();
+        $params = array_merge($params, $options);
 
-    return $this->get('vehicle/', $params);
-  }
+        $params['id'] = $id;
+
+        return $this->get('vehicle/', $params);
+    }
 }

@@ -1,10 +1,10 @@
-<?php 
+<?php
 
-require_once('../vendor/autoload.php');
+require_once '../vendor/autoload.php';
 
 /**
- * Create a new instance of the iRail Client. 
- * 
+ * Create a new instance of the iRail Client.
+ *
  * You can pass an array with your prefered language like this
  *
  * new iRail(array('lang' => 'nl'));
@@ -31,7 +31,7 @@ $stations = $irail->api('stations')->all();
 $connection = $irail->api('connection')->schedule('Tienen', 'Courtrai');
 
 /**
- * You can easily get a list of all trains leaving from a city by using the live board. The following example will return a list of all trains departing in Tienen on February 2, 2014 at 1PM. 
+ * You can easily get a list of all trains leaving from a city by using the live board. The following example will return a list of all trains departing in Tienen on February 2, 2014 at 1PM.
  *
  * If you prefer working with id's, you can use the id() function. It works the same way, only with an id.
  */

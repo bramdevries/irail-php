@@ -2,8 +2,6 @@
 
 namespace iRail;
 
-use Guzzle\Http\Client as Guzzle;
-
 /**
  * Class Client
  *
@@ -29,7 +27,7 @@ class Client
 	 * @param array  $options
 	 * @param Guzzle $httpClient
 	 */
-	public function __construct (array $options = array(), Guzzle $httpClient = null)
+	public function __construct (array $options = array())
     {
         $this->options = array_merge($this->options, $options);
     }

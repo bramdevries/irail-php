@@ -7,7 +7,7 @@ namespace iRail\Api;
  *
  * @package iRail\Api
  */
-class Liveboard extends AbstractApi
+class Liveboard extends AbstractEndpoint
 {
 	/**
 	 * @param       $station
@@ -21,7 +21,9 @@ class Liveboard extends AbstractApi
 
         $params['station'] = $station;
 
-        return $this->get('liveboard/', $params);
+		return $this->getResponse('liveboard/', array(
+			'query' => $params
+		));
     }
 
 	/**
@@ -36,6 +38,8 @@ class Liveboard extends AbstractApi
 
         $params['id'] = $id;
 
-        return $this->get('liveboard/', $params);
+        return $this->getResponse('liveboard/', array(
+			'query' => $params
+		));
     }
 }

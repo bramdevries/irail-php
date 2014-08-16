@@ -15,6 +15,6 @@
         }
     },
     "require": {
-        "guzzle/guzzle": "*"
-    }
+		"guzzlehttp/guzzle": "~4.0"
+	}
 }

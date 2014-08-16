@@ -7,13 +7,13 @@ namespace iRail\Api;
  *
  * @package iRail\Api
  */
-class Station extends AbstractApi
+class Station extends AbstractEndpoint
 {
 	/**
 	 * @return mixed
 	 */
 	public function all()
     {
-        return $this->get('stations/');
+        return $this->getResponse('stations/');
     }
 }

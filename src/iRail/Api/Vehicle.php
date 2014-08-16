@@ -7,7 +7,7 @@ namespace iRail\Api;
  *
  * @package iRail\Api
  */
-class Vehicle extends AbstractApi
+class Vehicle extends AbstractEndpoint
 {
 	/**
 	 * @param       $id
@@ -21,6 +21,8 @@ class Vehicle extends AbstractApi
 
         $params['id'] = $id;
 
-        return $this->get('vehicle/', $params);
+        return $this->getResponse('vehicle/', array(
+			'query' => $params,
+		));
     }
 }

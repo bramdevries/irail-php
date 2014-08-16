@@ -7,7 +7,7 @@ namespace iRail\Api;
  *
  * @package iRail\Api
  */
-class Connection extends AbstractApi
+class Connection extends AbstractEndpoint
 {
 
 	/**
@@ -24,6 +24,8 @@ class Connection extends AbstractApi
         $params['from'] = $from;
         $params['to'] = $to;
 
-        return $this->get('connections/', $params);
+        return $this->getResponse('connections/', array(
+			'query' => $params,
+		));
     }
 }

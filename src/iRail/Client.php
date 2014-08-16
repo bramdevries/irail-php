@@ -16,14 +16,14 @@ class Client
 	 * @var array
 	 */
 	protected $options = array(
-        'base_url' => 'http://api.irail.be/',
-        'lang' => 'en',
+        'lang' 	 => 'en',
+		'format' => 'json',
     );
 
 	/**
-	 * @var Guzzle
+	 * @var string
 	 */
-	private $httpClient;
+	protected $url = 'http://api.irail.be/';
 
 	/**
 	 * @param array  $options
@@ -32,9 +32,6 @@ class Client
 	public function __construct (array $options = array(), Guzzle $httpClient = null)
     {
         $this->options = array_merge($this->options, $options);
-
-        $httpClient = $httpClient ?: new Guzzle($this->options['base_url']);
-        $this->httpClient = $httpClient;
     }
 
 	/**
@@ -53,15 +50,9 @@ class Client
     }
 
 	/**
-	 * @return Guzzle
-	 */
-	public function getHttpClient()
-    {
-        return $this->httpClient;
-    }
-
-	/**
-	 * @return mixed
+	 * Get the format
+	 *
+	 * @return string|null
 	 */
 	public function getFormat()
     {
@@ -69,9 +60,21 @@ class Client
     }
 
 	/**
-	 * @return mixed
+	 * Get the base url
+	 *
+	 * @return string
 	 */
-	public function getLanguage()
+	public function getUrl()
+	{
+		return $this->url;
+	}
+
+	/**
+	 * Get the locale
+	 *
+	 * @return string|null
+	 */
+	public function getLocale()
     {
         return $this->options['lang'];
     }

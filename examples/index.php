@@ -16,7 +16,7 @@ $irail = new iRail();
 /**
  * To get a list of all the stations:
  */
-$stations = $irail->api('stations')->all();
+$stations = $irail->api('station')->all();
 
 /**
  * To get info about a connection:

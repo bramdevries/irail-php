@@ -4,17 +4,33 @@ namespace iRail\Api;
 
 use iRail\Client;
 
+/**
+ * Class AbstractApi
+ *
+ * @package iRail\Api
+ */
 abstract class AbstractApi
 {
 
-    private $client;
+	/**
+	 * @var Client
+	 */
+	private $client;
 
-    public function __construct(Client $client)
+	/**
+	 * @param Client $client
+	 */
+	public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
-    public function get ($path, array $parameters = array())
+	/**
+	 * @param       $path
+	 * @param array $parameters
+	 * @return mixed
+	 */
+	public function get ($path, array $parameters = array())
     {
 
         $path .= "?format=json";

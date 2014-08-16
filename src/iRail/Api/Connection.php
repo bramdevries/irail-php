@@ -2,10 +2,21 @@
 
 namespace iRail\Api;
 
+/**
+ * Class Connection
+ *
+ * @package iRail\Api
+ */
 class Connection extends AbstractApi
 {
 
-    public function schedule($from, $to, array $options = array())
+	/**
+	 * @param       $from
+	 * @param       $to
+	 * @param array $options
+	 * @return mixed
+	 */
+	public function schedule($from, $to, array $options = array())
     {
         $params = array();
         $params = array_merge($params, $options);

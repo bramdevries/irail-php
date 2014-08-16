@@ -4,17 +4,32 @@ namespace iRail;
 
 use Guzzle\Http\Client as Guzzle;
 
+/**
+ * Class Client
+ *
+ * @package iRail
+ */
 class Client
 {
 
-    protected $options = array(
+	/**
+	 * @var array
+	 */
+	protected $options = array(
         'base_url' => 'http://api.irail.be/',
         'lang' => 'en',
     );
 
-    private $httpClient;
+	/**
+	 * @var Guzzle
+	 */
+	private $httpClient;
 
-    public function __construct (array $options = array(), Guzzle $httpClient = null)
+	/**
+	 * @param array  $options
+	 * @param Guzzle $httpClient
+	 */
+	public function __construct (array $options = array(), Guzzle $httpClient = null)
     {
         $this->options = array_merge($this->options, $options);
 
@@ -22,35 +37,41 @@ class Client
         $this->httpClient = $httpClient;
     }
 
-    public function api($name)
+	/**
+	 * @param $name
+	 * @throws \Exception
+	 */
+	public function api($name)
     {
-        switch ($name) {
-            case 'stations':
-                return new Api\Station($this);
-                break;
-            case 'connection':
-                return new Api\Connection($this);
-                break;
-            case 'liveboard':
-                return new Api\Liveboard($this);
-                break;
-            case 'vehicle':
-                return new Api\Vehicle($this);
-                break;
-        }
+		$instance = '\iRail\Api\\' . ucfirst($name);
+
+		if (class_exists($instance)) {
+			return new $instance($this);
+		} else {
+			throw new \Exception('Endpoint could not be found');
+		}
     }
 
-    public function getHttpClient()
+	/**
+	 * @return Guzzle
+	 */
+	public function getHttpClient()
     {
         return $this->httpClient;
     }
 
-    public function getFormat()
+	/**
+	 * @return mixed
+	 */
+	public function getFormat()
     {
         return $this->options['format'];
     }
 
-    public function getLanguage()
+	/**
+	 * @return mixed
+	 */
+	public function getLanguage()
     {
         return $this->options['lang'];
     }
